@@ -1,6 +1,7 @@
 import os
 import socket
 import threading
+import tkinter as tk
 
 
 class Receive(threading.Thread):
@@ -16,6 +17,7 @@ class Receive(threading.Thread):
 		super().__init__()
 		self.sock = sock
 		self.name = name
+		self.messages = None
 
 	def run(self):
 		"""
@@ -26,7 +28,16 @@ class Receive(threading.Thread):
 			message = self.sock.recv(1024).decode('ascii')
 
 			if message:
-				print('\r{}\n{}: '.format(message, self.name), end='')
+				if self.messages:
+					self.messages.insert(tk.END, message)
+					print('what\'s up')
+					print('\r{}\n{}: '.format(message,
+					                          self.name).encode('ascii'),
+					      end='')
+				else:
+					print('\r{}\n{}: '.format(message,
+					                          self.name).encode('ascii'),
+					      end='')
 			else:
 				# Server has closed the socket, exit the program
 				print('\nOh no, we have lost connection to the server!')

@@ -19,6 +19,8 @@ class Client:
 		self.host = host
 		self.port = port
 		self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		self.name = None
+		self.messages = None
 
 	def start(self):
 		"""
@@ -32,24 +34,26 @@ class Client:
 		self.sock.connect((self.host, self.port))
 		print(f'successfully connected to {self.host}:{self.port}\n')
 
-		name = input('Your name: ')
-		name = name.encode('ascii')
+		self.name = input('Your name: ')
 
 		print(
-		    f'\nWelcome, {name}! Getting ready to send and receive messages...'
+		    f'\nWelcome, {self.name}! Getting ready to send and receive messages...'
 		)
 
 		# create send and receive threads
-		send = Send(self.sock, name)
-		receive = Receive(self.sock, name)
+		send = Send(self.sock, self.name)
+		receive = Receive(self.sock, self.name)
 
 		# start send and receive threads
 		send.start()
 		receive.start()
 
-		self.sock.sendall(f'server: {name} has joined the chat. Say hi!')
+		self.sock.sendall('server: {} has joined the chat. Say hi!'.format(
+		    self.name).encode('ascii'))
 		print("\rAll set! Leave the chatroom anytime by typing 'QUIT'\n")
-		print(f'{name}: ', end='')
+		print(f'{self.name}: ', end='')
+
+		return receive
 
 	def send(self, text_input):
 		"""
@@ -60,4 +64,18 @@ class Client:
 		Args:
 			text_input(tk.Entry): Objeto tk.Entry destinado à entrada de texto do usuário.
 		"""
-		pass
+		message = text_input.get()
+		text_input.delete(0, tk.END)
+		self.messages.insert(
+		    tk.END, '{}: {}'.format(self.name, message).encode('ascii'))
+
+		if message == 'QUIT':
+			self.sock.sendall('server: {} has left the chat.'.format(
+			    self.name).encode('ascii'))
+
+			print('\nquitting...')
+			self.sock.close()
+			os._exit(0)
+		else:
+			self.sock.sendall('{}: {}'.format(self.name,
+			                                  message).encode('ascii'))

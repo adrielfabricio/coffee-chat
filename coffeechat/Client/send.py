@@ -1,4 +1,5 @@
 import os
+import sys
 import socket
 import threading
 
@@ -22,15 +23,16 @@ class Send(threading.Thread):
 		Digitar 'QUIT' fechará a conexão e sairá do aplicativo.
 		'''
 		while True:
-			message = input('{}: '.format(self.name))
+			message = input(f'{self.name}: ')
+			sys.stdout.flush()
+			message = sys.stdin.readline()[:-1]
+
 			# leave of app typing 'QUIT'
 			if message == 'QUIT':
-				self.sock.sendall('Server: {} has left the chat.'.format(
-				    self.name).encode('ascii'))
+				self.sock.sendall(f'server: {self.name} has left the chat.')
 				break
 			else:
-				self.sock.sendall('{}: {}'.format(self.name,
-				                                  message).encode('ascii'))
+				self.sock.sendall(f'{self.name}: {message}')
 
 		print('\nQuitting...')
 		self.sock.close()
