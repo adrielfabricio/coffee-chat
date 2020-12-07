@@ -3,6 +3,11 @@ import tkinter as tk
 from coffeechat.Client.send import *
 from coffeechat.Client.receive import *
 
+def get_name(entry, window, obj):
+
+	obj.name = entry.get()
+	window.destroy()
+
 
 class Client:
 	"""
@@ -34,7 +39,26 @@ class Client:
 		self.sock.connect((self.host, self.port))
 		print(f'successfully connected to {self.host}:{self.port}\n')
 
-		self.name = input('Your name: ')
+		# INTERFACE
+		window = tk.Tk()
+		window.title('Cliente - Nome')
+		host_input = tk.Entry(master=window, width='50', borderwidth=18,
+									bg='#ccc', relief=tk.FLAT, font='Times 10')
+		host_input.pack(fill=tk.BOTH, expand=True)
+		host_input.bind("<Return>", lambda x: get_name(host_input, window, self))
+		host_input.insert(0, "Digite o nome desejado sem caracteres especiais.")
+		host_input.bind("<Button-1>", lambda x: host_input.delete(0,tk.END))
+		host_input.focus()
+
+		width = 350
+		heigth = 50
+		x = (window.winfo_screenwidth()//2) - (width//2)
+		y = (window.winfo_screenheight()//2) - (heigth//2)
+		window.geometry('{}x{}+{}+{}'.format(width, heigth, x, y))
+
+		window.mainloop()
+  
+		# self.name = input('Your name: ')
 
 		print(
 		    f'\nWelcome, {self.name}! Getting ready to send and receive messages...'
