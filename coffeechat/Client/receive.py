@@ -2,6 +2,7 @@ import os
 import socket
 import threading
 import tkinter as tk
+from winsound import *
 
 
 class Receive(threading.Thread):
@@ -30,7 +31,7 @@ class Receive(threading.Thread):
 			if message:
 				if self.messages:
 					self.messages.insert(tk.END, message)
-					print('what\'s up')
+					PlaySound('notification.wav', SND_FILENAME)
 					print('\r{}\n{}: '.format(message,
 					                          self.name).encode('ascii'),
 					      end='')

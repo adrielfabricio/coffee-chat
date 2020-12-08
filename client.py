@@ -39,10 +39,9 @@ def main(host, port):
 	
 	btn_send = tk.Button(master=window,
 	                     text='Enviar',
-	                     command=lambda: client.send(text_input),
+	                     command= lambda:client.send(text_input),
                        relief='flat',
                        bg='#ddd')
-
 	#PACK OU GRID
 	frm_entry.grid(row=1, column=0, padx=10, sticky="ew")
 	btn_send.grid(row=1, column=1, pady=10, sticky="ew")
