@@ -3,7 +3,7 @@ import socket
 import threading
 import tkinter as tk
 from winsound import *
-
+from win10toast import ToastNotifier
 
 class Receive(threading.Thread):
 	"""
@@ -29,9 +29,18 @@ class Receive(threading.Thread):
 			message = self.sock.recv(1024).decode('ascii')
 
 			if message:
+     
 				if self.messages:
+      
 					self.messages.insert(tk.END, message)
+					
+					#SOM DE NOTIFICAÇÃO
 					PlaySound('notification.wav', SND_FILENAME)
+					#NOTIFICAÇÃO WINDOWS
+					if os.name == 'nt':
+						toaster = ToastNotifier()
+						toaster.show_toast(message)
+
 					print('\r{}\n{}: '.format(message,
 					                          self.name).encode('ascii'),
 					      end='')
