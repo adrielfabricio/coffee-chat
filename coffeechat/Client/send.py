@@ -3,7 +3,6 @@ import sys
 import socket
 import threading
 
-
 class Send(threading.Thread):
 	'''
 	Thread de envio que espera a entrada do usuário na CLI.
@@ -27,13 +26,14 @@ class Send(threading.Thread):
 			sys.stdout.flush()
 			message = sys.stdin.readline()[:-1]
 
+
 			# leave of app typing 'QUIT'
 			if message == 'QUIT':
-				self.sock.sendall(f'server: {self.name} has left the chat.')
+				self.sock.sendall(f'Server: {self.name} saiu do chat.')
 				break
 			else:
 				self.sock.sendall(f'{self.name}: {message}')
 
-		print('\nQuitting...')
+		print('\nSaindo...')
 		self.sock.close()
 		os._exit(0)

@@ -17,13 +17,14 @@ if __name__ == "__main__":
   
 	window = tk.Tk()
 	window.title('Conexão do Server')
+	window.resizable(height=False, width=False)
+	window.iconbitmap('logo_2.ico')
 	host_input = tk.Entry(master=window, width='50', borderwidth=18,
 								bg='#ccc', relief=tk.FLAT, font='Times 10')
 	host_input.pack(fill=tk.BOTH, expand=True)
 	host_input.bind("<Return>", lambda x: start_server(host_input.get(),window) )
 	host_input.insert(0, "Digite o endereço de host para o servidor: localhost")
 	host_input.bind("<Button-1>", lambda x: host_input.delete(0,tk.END))
-	host_input.focus()
 
 	width = 450
 	heigth = 50

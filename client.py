@@ -12,11 +12,13 @@ def main(host, port):
 	window = tk.Tk()
 	window.title('CoffeeChat')
 	window.resizable(height=False, width=False)
- 
+	window.iconbitmap('logo_2.ico')
+	window.config(background='#3c3939')
+  
 	# COMPONENTES
-	frm_messages = tk.Frame(master=window)
+	frm_messages = tk.Frame(master=window, bg='#3c3939')
 	scrollbar = tk.Scrollbar(master=frm_messages)
-	messages = tk.Listbox(master=frm_messages, yscrollcommand=scrollbar.set)
+	messages = tk.Listbox(master=frm_messages, yscrollcommand=scrollbar.set, fg='white', bg='#3c3939',  borderwidth=0, highlightthickness=0, selectbackground="Red", highlightcolor="Green")
 	scrollbar.pack(side=tk.RIGHT, fill=tk.Y, expand=False)
 	messages.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
@@ -24,34 +26,28 @@ def main(host, port):
 	receive.messages = messages
 
 	# IMAGEM E FORM
-	frm_messages.grid(row=0, column=0, columnspan=2, sticky="nsew")
+	frm_messages.pack(fill='both', expand=True, padx=10, pady=10)
 	# img = tk.PhotoImage(file='logo.png')
 	# label = tk.Label(window, image=img,borderwidth=0)
 	
 	#INPUT
 	frm_entry = tk.Frame(master=window)
-	text_input = tk.Entry(master=frm_entry)
+	text_input = tk.Entry(master=frm_entry, borderwidth=18, bg='#524f4f',fg='white', relief=tk.FLAT, font='Times 10')
 	text_input.pack(fill=tk.BOTH, expand=True)
 	text_input.bind("<Return>", lambda x: client.send(text_input))
-	text_input.insert(0, "Digite algo e aperte enter, ou clique enviar.")
+	text_input.insert(0, "Digite algo e aperte enter.")
 	text_input.bind("<Button-1>", lambda x: text_input.delete(0,tk.END))
 	text_input.focus()
 	
-	btn_send = tk.Button(master=window,
-	                     text='Enviar',
-	                     command= lambda:client.send(text_input),
-                       relief='flat',
-                       bg='#ddd')
 	#PACK OU GRID
-	frm_entry.grid(row=1, column=0, padx=10, sticky="ew")
-	btn_send.grid(row=1, column=1, pady=10, sticky="ew")
-	# label.place(in_=window, anchor="c", relx=.5, rely=.5)
+	frm_entry.pack(fill='both')
 
 	#CONFIG
-	window.rowconfigure(0, minsize=500, weight=1)
-	window.rowconfigure(1, minsize=50, weight=0)
-	window.columnconfigure(0, minsize=500, weight=1)
-	window.columnconfigure(1, minsize=200, weight=0)
+	width = 450
+	heigth = 550
+	x = (window.winfo_screenwidth()//2) - (width//2)
+	y = (window.winfo_screenheight()//2) - (heigth//2)
+	window.geometry('{}x{}+{}+{}'.format(width, heigth, x, y))
 
 	window.mainloop()
 
@@ -67,13 +63,14 @@ if __name__ == "__main__":
   
 	window = tk.Tk()
 	window.title('Cliente - Conexão ao Host')
+	window.resizable(height=False, width=False)
+	window.iconbitmap('logo_2.ico')
 	host_input = tk.Entry(master=window, width='50', borderwidth=18,
 								bg='#ccc', relief=tk.FLAT, font='Times 10')
 	host_input.pack(fill=tk.BOTH, expand=True)
 	host_input.bind("<Return>", lambda x: redirect(host_input.get(), 1060, window) )
 	host_input.insert(0, "Digite o endereço de Host que deseja se Conectar, ex: localhost")
 	host_input.bind("<Button-1>", lambda x: host_input.delete(0,tk.END))
-	host_input.focus()
 
 	width = 450
 	heigth = 50

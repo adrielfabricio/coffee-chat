@@ -4,6 +4,7 @@ import threading
 import tkinter as tk
 from winsound import *
 from win10toast import ToastNotifier
+from datetime import datetime
 
 class Receive(threading.Thread):
 	"""
@@ -31,8 +32,11 @@ class Receive(threading.Thread):
 			if message:
      
 				if self.messages:
-      
-					self.messages.insert(tk.END, message)
+										
+					# current date and time
+					now = datetime.now()
+					timestamp = now.strftime("%H:%M:%S")
+					self.messages.insert(tk.END, '(' + str(timestamp) +')' +' '+message)
 					
 					#SOM DE NOTIFICAÇÃO
 					PlaySound('notification.wav', SND_FILENAME)
@@ -41,16 +45,12 @@ class Receive(threading.Thread):
 						toaster = ToastNotifier()
 						toaster.show_toast(message)
 
-					print('\r{}\n{}: '.format(message,
-					                          self.name).encode('ascii'),
-					      end='')
+					print('\r{}\n{}: '.format(message, self.name).encode('ascii'),end='')
 				else:
-					print('\r{}\n{}: '.format(message,
-					                          self.name).encode('ascii'),
-					      end='')
+					print('\r{}\n{}: '.format(message,self.name).encode('ascii'),end='')
 			else:
 				# Server has closed the socket, exit the program
-				print('\nOh no, we have lost connection to the server!')
+				print('\nOh não, perdemos conexão com o server.')
 				print('\nQuitting...')
 				self.sock.close()
 				os._exit(0)

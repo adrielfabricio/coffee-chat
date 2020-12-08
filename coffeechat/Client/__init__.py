@@ -2,6 +2,7 @@ import socket
 import tkinter as tk
 from coffeechat.Client.send import *
 from coffeechat.Client.receive import *
+from datetime import datetime
 
 def get_name(entry, window, obj):
 
@@ -42,13 +43,14 @@ class Client:
 		# INTERFACE
 		window = tk.Tk()
 		window.title('Cliente - Nome')
+		window.resizable(height=False, width=False)
+		window.iconbitmap('logo_2.ico')
 		host_input = tk.Entry(master=window, width='50', borderwidth=18,
 									bg='#ccc', relief=tk.FLAT, font='Times 10')
 		host_input.pack(fill=tk.BOTH, expand=True)
 		host_input.bind("<Return>", lambda x: get_name(host_input, window, self))
 		host_input.insert(0, "Digite o nome desejado sem caracteres especiais.")
 		host_input.bind("<Button-1>", lambda x: host_input.delete(0,tk.END))
-		host_input.focus()
 
 		width = 350
 		heigth = 50
@@ -88,10 +90,15 @@ class Client:
 		Args:
 			text_input(tk.Entry): Objeto tk.Entry destinado à entrada de texto do usuário.
 		"""
+  
+		# current date and time
+		now = datetime.now()
+		timestamp = now.strftime("%H:%M:%S")
+  
 		message = text_input.get()
 		text_input.delete(0, tk.END)
 		self.messages.insert(
-		    tk.END, '{}: {}'.format(self.name, message).encode('ascii'))
+		    tk.END, '{}: {}'.format('(' + str(timestamp) +')' +' '+self.name, message).encode('ascii'))
 
 		if message == 'QUIT':
 			self.sock.sendall('server: {} has left the chat.'.format(
