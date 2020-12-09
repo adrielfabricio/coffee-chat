@@ -7,7 +7,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://adrielfabricio.github.io/coffee-chat/">
+  <a href="https://github.com/adrielfabricio/coffee-chat/">
     <img src="./img/logo_2.png" alt="Logo" width="100">
   </a>
 
@@ -153,6 +153,8 @@ O servidor quando roda ele armazena todos os clientes conectados guardando seus 
 - O servidor recebe e processa a mensagem
 - O servidor envia as mensagens para todos os clientes conectados
 - Os clientes conectados mostram a mensagem da tela
+
+Para mais informações de como foi realizado a implementação acesse o [link da documentação](https://adrielfabricio.github.io/coffee-chat/)
 
 ## Contribuidores
 
