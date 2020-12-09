@@ -23,6 +23,58 @@
   </p>
 </p>
 
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Sumário</summary>
+  <ol>
+    <li>
+      <a href="#sobre-o-projeto">Sobre o projeto</a>
+    </li>
+    <li>
+      <a href="#ferramentas">Ferramentas</a>
+    </li>
+    <li>
+        <a href="#como-começar">Como começar</a>
+        <ul>
+            <li><a href="#pré-requisitos">Pré-requisitos</a></li>
+            <li><a href="#installation">Instalação</a></li>
+        </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
+
+
+## Sobre o projeto
+
+O projeto é de criação de um chat que conecte diversas pessoas na mesma rede. Ele se chama coffee-chat por nossa paixão por café (exceto Samuel) e por ser nosso melhor companheiro na horas mais tardias enquanto programamos.
+
+## Ferramentas
+
+Para esse projeto utilizamos o python3 e mó
+
+
+## Como começar
+
+
+
+### Pré-requisitos
+
+Para rodar o projeto é necessário ter instalado:
+
+- python3 (^v3.8)
+- pip3 (^v20)
+    - tkinter (para interface)
+    - win10toast (para windows)
+
+
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/adrielfabricio/coffee-chat.svg?style=for-the-badge
