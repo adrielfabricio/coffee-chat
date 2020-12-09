@@ -60,6 +60,6 @@ class Receive(threading.Thread):
 			else:
 				# Server has closed the socket, exit the program
 				print('\nOh não, perdemos conexão com o server.')
-				print('\nQuitting...')
+				print('\nSaindo...')
 				self.sock.close()
 				os._exit(0)

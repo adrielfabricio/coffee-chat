@@ -45,9 +45,9 @@ class Client:
 		Returns:
 			Um objeto Receive que representa o segmento de recebimento.
 		"""
-		print(f'trying to connect to {self.host}:{self.port}...')
+		print(f'Tentando se conecatar com {self.host}:{self.port}...')
 		self.sock.connect((self.host, self.port))
-		print(f'successfully connected to {self.host}:{self.port}\n')
+		print(f'Conectado com sucesso a {self.host}:{self.port}\n')
 
 		# INTERFACE
 		window = tk.Tk()
@@ -79,7 +79,7 @@ class Client:
 		# self.name = input('Your name: ')
 
 		print(
-		    f'\nWelcome, {self.name}! Getting ready to send and receive messages...'
+		    f'\nBem Vindo, {self.name}! Preparando para enviar mensagens...'
 		)
 
 		# create send and receive threads
@@ -90,9 +90,9 @@ class Client:
 		send.start()
 		receive.start()
 
-		self.sock.sendall('server: {} has joined the chat. Say hi!'.format(
+		self.sock.sendall('Server: {} acabou de se juntar ao chat, diga ola!'.format(
 		    self.name).encode('ascii'))
-		print("\rAll set! Leave the chatroom anytime by typing 'QUIT'\n")
+		print("\rTudo pronto! Voce pode sair do chat digitando QUIT.\n")
 		print(f'{self.name}: ', end='')
 
 		return receive
@@ -119,10 +119,10 @@ class Client:
 		                    message).encode('ascii'))
 
 		if message == 'QUIT':
-			self.sock.sendall('server: {} has left the chat.'.format(
+			self.sock.sendall('Server: {} saiu do chat.'.format(
 			    self.name).encode('ascii'))
 
-			print('\nquitting...')
+			print('\n Saindo...')
 			self.sock.close()
 			os._exit(0)
 		else:

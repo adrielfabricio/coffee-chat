@@ -27,10 +27,10 @@ class ServerSocket(threading.Thread):
 		while True:
 			message = self.sc.recv(1024).decode('ascii')
 			if message:
-				print(f'{self.sockname} says {message}')
+				print(f'{self.sockname} diz {message}')
 				self.server.broadcast(message, self.sockname)
 			else:
-				print(f'{self.sockname} has closed connection')
+				print(f'{self.sockname} fechou a conexao.')
 				self.sc.close()
 				self.server.remove_connection(self)
 				return

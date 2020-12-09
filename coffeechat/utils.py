@@ -12,8 +12,8 @@ def exit(server):
 	while True:
 		ipt = input('')
 		if (ipt == 'q'):
-			print('closing all connections...')
+			print('Fechando todas as conexoes...')
 			for connection in server.connections:
 				connection.sc.close()
-			print('shutting down the server')
+			print('Desligando o servidor ...')
 			os._exit(0)
