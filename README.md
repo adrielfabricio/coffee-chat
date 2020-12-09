@@ -32,7 +32,14 @@
             <li><a href="#motivação">Motivação</a></li>
             <li><a href="#ferramentas">Ferramentas</a></li>
             <li><a href="#pré-requisitos">Pré-requisitos</a></li>
-            <li><a href="#instalação">Instalação</a></li>
+            <li>
+              <a href="#instalação">Instalação</a>
+              <ul>
+                <li><a href="#via-conda">Via Conda</a></li>
+                <li><a href="#via-pip">Via Pip</a></li>
+                <li><a href="#finalizando-instalação-somente-windows">Finalizando instalação (somente Windows)</a></li>
+              </ul>
+            </li>
         </ul>
     </li>
     <li>
@@ -59,27 +66,49 @@ Esse projeto originou-se pela curiosidade de compreender como o processo de um c
 
 ### Ferramentas
 
-Para esse projeto utilizamos o python3 e mó
+Para esse projeto utilizamos o Python e o Conda para conteinerização das depedências.
 
 ### Pré-requisitos
 
-Para rodar o projeto é necessário ter instalado:
-
-- python3 (^v3.8)
-- pip3 (^v20)
-  - tkinter (para interface)
-  - win10toast (para windows)
+Todos os requisitos necessários para rodar o projeto estão especificados no arquivo <a href="https://github.com/adrielfabricio/coffee-chat/blob/main/environment.yml">`environment.yml`</a> localizado no diretório raiz do projeto.
 
 ### Instalação
 
-Para baixar o python3 basta clicar acessa o [python.org](https://www.python.org/download/releases/3.0/)
+Pode ser feita a instalação das dependências via `conda` ou `pip`.
 
-Caso para instalar o tkinter e win10toast basta rodar esse comando após a instalação do python3 e pip3
+#### Via Conda
+
+Para instalar via conda é necessária ter a última versão do mesmo. Um tutorial para fazer a instalação corretamente do conda no Windows, macOS ou Linux pode ser acessada <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/">aqui</a>.
+
+Após concluir a instalação do conda, basta executar o seguinte comando na CLI:
 
 ```shell
-$ pip3 install tkinter
+conda env create -f environment.yml
+```
 
-$ pip3 install win10toast
+Feito isso, todas as dependências que estão localizadas no `environment.yml` serão instaladas no ambiente que será criado com o nome `coffee-chat`. Para ativar o ambiente execute o comando a seguir:
+
+```shell
+conda activate coffee-chat
+```
+
+#### Via Pip
+
+Para instalar o projeto utilizando o pip basta utilizar o arquivo `requiriments.txt` localizado no diretório raiz do projeto. Basta executar o comando a seguir:
+
+```shell
+pip install -r requirements.txt
+```
+
+A versão do pip utilizada no desenvolvimento do projevo foi a v20.3.
+
+#### Finalizando instalação (somente Windows)
+
+O CoffeeChat oferece recurso de notificação para usuários Windows, para isso é necessário instalar duas bibliotecas, executando o comando que segue:
+
+```shell
+pip install pywin32
+pip install win10toast
 ```
 
 ## Como começar
@@ -93,7 +122,7 @@ Para rodar o projeto é preciso iniciar um servidor em um endereço IP na rede q
 Para iniciar o servidor rode o seguinte comando:
 
 ```shell
-$ python3 server.py
+python server.py
 ```
 
 Após rodar esse comando irá aparecer a seguinte caixa de texto, basta clicar no texto dela e digitar o IP onde o servidor irá rodar e depois aperta `ENTER`
@@ -108,7 +137,7 @@ Com isso o servidor estará pronto para receber os clientes
 Para iniciar um cliente basta abrir outro terminal, caso esteja no mesmo computador do servidor, e rodar o seguinte comando
 
 ```shell
-$ python3 client.py
+python client.py
 ```
 
 Irá abrir uma caixa semelhante ao do servidor, basta preencher com o IP do seu servidor e depois aperta em `ENTER`
