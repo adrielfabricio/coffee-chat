@@ -118,7 +118,7 @@ Após preencher o nome do usuário irá abrir uma janela para o chat
 
 ![client-1](./img/client5.png)
 
-Para testar basta digitar algo e enviar
+Para testar basta digitar algo e enviar. **Atenção!** o input do chat não aceita caracteres especiais.
 
 ![client-1](./img/client6.png)
 
