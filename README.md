@@ -144,7 +144,7 @@ Quando um novo usuário entra na rede os usuários já existentes são notificad
 [issues-shield]: https://img.shields.io/github/issues/adrielfabricio/coffee-chat.svg?style=for-the-badge
 [issues-url]: https://github.com/adrielfabricio/coffee-chat/issues
 [license-shield]: https://img.shields.io/github/license/adrielfabricio/coffee-chat.svg?style=for-the-badge
-[license-url]: https://github.com/adrielfabricio/coffee-chat/blob/master/LICENSE.txt
+[license-url]: https://github.com/adrielfabricio/coffee-chat/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
