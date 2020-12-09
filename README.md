@@ -29,6 +29,7 @@
     <li>
         <a href="#sobre-o-projeto">Sobre o projeto</a>
         <ul>
+            <li><a href="#motivação">Motivação</a></li>
             <li><a href="#ferramentas">Ferramentas</a></li>
             <li><a href="#pré-requisitos">Pré-requisitos</a></li>
             <li><a href="#instalação">Instalação</a></li>
@@ -52,6 +53,10 @@
 O projeto é de criação de um chat que conecte diversas pessoas na mesma rede. Ele se chama coffee-chat por nossa paixão por café (exceto Samuel) e por ser nosso melhor companheiro na horas mais tardias enquanto programamos.
 
 O projeto foi testado para plataformas windows 10 e ubuntu 20.04.
+
+### Motivação
+
+Esse projeto originou-se pela curiosidade de compreender como o processo de um chat em real-time funciona, além de aprender como diversos computadores poderiam estar conectados na mesma rede sem que houvesse falha no recebimento e envio de mensagens.
 
 ### Ferramentas
 
