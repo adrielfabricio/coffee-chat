@@ -7,7 +7,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://adrielfabricio.github.io/coffee-chat/">
     <img src="./img/logo_2.png" alt="Logo" width="100">
   </a>
 
@@ -143,7 +143,9 @@ Quando um novo usuário entra na rede os usuários já existentes são notificad
 
 Para a aplicação enviar e receber mensagens criamos uma estrutura client-server, onde o servidor é responsável por receber mensagens e difundir elas para os clientes conectados. Para comunicação entre o servidor e o cliente usamos o modelo TCP/IP.
 
-![client-1](./img/protocolo2.png)
+<div align="center">
+  <img src="./img/protocolo2.png" alt="Logo" width="500">
+</div>
 
 O servidor quando roda ele armazena todos os clientes conectados guardando seus IP's e suas portas. A distribuição de mensagem funciona da seguinte forma
 
