@@ -4,12 +4,11 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="logo_2.png" alt="Logo" width="100">
+    <img src="./img/logo_2.png" alt="Logo" width="100">
   </a>
 
   <h3 align="center">Projeto Coffee-Chat</h3>
@@ -22,7 +21,6 @@
     
   </p>
 </p>
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -46,7 +44,6 @@
   </ol>
 </details>
 
-
 ## Sobre o projeto
 
 O projeto é de criação de um chat que conecte diversas pessoas na mesma rede. Ele se chama coffee-chat por nossa paixão por café (exceto Samuel) e por ser nosso melhor companheiro na horas mais tardias enquanto programamos.
@@ -63,16 +60,14 @@ Para rodar o projeto é necessário ter instalado:
 
 - python3 (^v3.8)
 - pip3 (^v20)
-    - tkinter (para interface)
-    - win10toast (para windows)
-
+  - tkinter (para interface)
+  - win10toast (para windows)
 
 ### Instalação
 
 Para baixar o python3 basta clicar acessa o [python.org](https://www.python.org/download/releases/3.0/)
 
 Caso para instalar o tkinter e win10toast basta rodar esse comando após a instalação do python3 e pip3
-
 
 ```shell
 $ pip3 install tkinter
@@ -82,7 +77,7 @@ $ pip3 install win10toast
 
 ## Como começar
 
-O projeto é dividido em servidor e cliente. O servidor conectar e gerencia todas as requisições dos clientes. O cliente se comunica com o servidor mandando mensagens e renderiza o retorno dele. 
+O projeto é dividido em servidor e cliente. O servidor conectar e gerencia todas as requisições dos clientes. O cliente se comunica com o servidor mandando mensagens e renderiza o retorno dele.
 
 Para rodar o projeto é preciso iniciar um servidor em um endereço IP na rede que os demais clientes possam acessar. Em seguinda é necessário conectar os clientes com esse IP.
 
@@ -137,10 +132,9 @@ Quando um novo usuário entra na rede os usuários já existentes são notificad
 
 ![client-1](./img/client8.png)
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/adrielfabricio/coffee-chat.svg?style=for-the-badge
 [contributors-url]: https://github.com/adrielfabricio/coffee-chat/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/adrielfabricio/coffee-chat.svg?style=for-the-badge

@@ -21,7 +21,7 @@ def main(host, port):
 	window.title('CoffeeChat')
 	window.resizable(height=False, width=False)
 	if os.name == 'nt':
-		window.iconbitmap('logo_2.ico')
+		window.iconbitmap('img/logo_2.ico')
 	window.config(background='#3c3939')
 
 	# Componentes
@@ -43,8 +43,6 @@ def main(host, port):
 
 	# Imagem & Formulario
 	frm_messages.pack(fill='both', expand=True, padx=10, pady=10)
-	# img = tk.PhotoImage(file='logo.png')
-	# label = tk.Label(window, image=img,borderwidth=0)
 
 	# Input
 	frm_entry = tk.Frame(master=window)
@@ -93,7 +91,7 @@ if __name__ == "__main__":
 	window.title('Cliente - Conexão ao Host')
 	window.resizable(height=False, width=False)
 	if os.name == 'nt':
-		window.iconbitmap('logo_2.ico')
+		window.iconbitmap('img/logo_2.ico')
 	host_input = tk.Entry(master=window,
 	                      width='50',
 	                      borderwidth=18,

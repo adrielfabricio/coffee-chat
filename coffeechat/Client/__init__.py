@@ -54,7 +54,7 @@ class Client:
 		window.title('Cliente - Nome')
 		window.resizable(height=False, width=False)
 		if os.name == 'nt':
-			window.iconbitmap('logo_2.ico')
+			window.iconbitmap('img/logo_2.ico')
 		host_input = tk.Entry(master=window,
 		                      width='50',
 		                      borderwidth=18,
