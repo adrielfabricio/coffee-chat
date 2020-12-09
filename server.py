@@ -1,3 +1,4 @@
+"""Configuração do servidor e sua interface GUI"""
 import os
 import argparse
 import threading
@@ -7,7 +8,13 @@ import tkinter as tk
 
 
 def start_server(host, window):
+	"""
+	Inicia o servidor com base no host passado na GUI.
 
+	Attributes:
+		host (str): Endereço IP servidor.
+		window (tk.Frame): Objeto tk.Frame que contém a interface GUI para entrada do nome do servidor.
+	"""
 	window.destroy()
 	server = Server.Server(host, 1060)
 	server.start()
@@ -17,7 +24,6 @@ def start_server(host, window):
 
 
 if __name__ == "__main__":
-
 	window = tk.Tk()
 	window.title('Conexão do Server')
 	window.resizable(height=False, width=False)
@@ -51,5 +57,3 @@ if __name__ == "__main__":
 	#                     default=1060,
 	#                     help='TCP port (default 1060)')
 	# args = parser.parse_args()
-
-	# Create and start server thread

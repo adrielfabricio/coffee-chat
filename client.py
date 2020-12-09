@@ -1,3 +1,4 @@
+"""Configuração do cliente e sua interface GUI"""
 import os
 import argparse
 import threading
@@ -6,8 +7,14 @@ import coffeechat.Client as Client
 
 
 def main(host, port):
-
-	#JANELA
+	"""
+	Configuração do cliente e inicializa a interface gráfica.
+	
+	Attributes:
+		host (str): Endereço IP do socket.
+		port (int): Número da porta do socket.
+	"""
+	# Janela
 	client = Client.Client(host, port)
 	receive = client.start()
 	window = tk.Tk()
@@ -17,7 +24,7 @@ def main(host, port):
 		window.iconbitmap('logo_2.ico')
 	window.config(background='#3c3939')
 
-	# COMPONENTES
+	# Componentes
 	frm_messages = tk.Frame(master=window, bg='#3c3939')
 	scrollbar = tk.Scrollbar(master=frm_messages)
 	messages = tk.Listbox(master=frm_messages,
@@ -34,12 +41,12 @@ def main(host, port):
 	client.messages = messages
 	receive.messages = messages
 
-	# IMAGEM E FORM
+	# Imagem & Formulario
 	frm_messages.pack(fill='both', expand=True, padx=10, pady=10)
 	# img = tk.PhotoImage(file='logo.png')
 	# label = tk.Label(window, image=img,borderwidth=0)
 
-	#INPUT
+	# Input
 	frm_entry = tk.Frame(master=window)
 	text_input = tk.Entry(master=frm_entry,
 	                      borderwidth=18,
@@ -53,10 +60,10 @@ def main(host, port):
 	text_input.bind("<Button-1>", lambda x: text_input.delete(0, tk.END))
 	text_input.focus()
 
-	#PACK OU GRID
+	# Pack ou Grid
 	frm_entry.pack(fill='both')
 
-	#CONFIG
+	# Configs
 	width = 450
 	heigth = 550
 	x = (window.winfo_screenwidth() // 2) - (width // 2)
@@ -67,7 +74,14 @@ def main(host, port):
 
 
 def redirect(host, port, window):
+	"""
+	Redireciona o usuário para a sala de bate-papo.
 
+	Attributes:
+		host (str): Endereço IP do socket.
+		port (int): Número da porta do socket.
+		window (tk.Frame): Objeto tk.Frame que contém a interface GUI que será destruida para criação da tela da sala de bate papo.
+	"""
 	host = host_input.get()
 	window.destroy()
 	main(host, 1060)
