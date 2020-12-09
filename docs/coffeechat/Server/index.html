@@ -65,14 +65,14 @@ class Server(threading.Thread):
                 sock.bind((self.host, self.port))
 
                 sock.listen(1)
-                print(f&#39;listening at {sock.getsockname()}&#39;)
+                print(f&#39;Ouvindo em {sock.getsockname()}&#39;)
 
                 # listen for new client connections
                 while True:
                         # new connection
                         sc, sockname = sock.accept()
                         print(
-                            f&#39;new connection from {sc.getpeername()} to {sc.getsockname()}&#39;
+                            f&#39;Nova conexao de {sc.getpeername()} para {sc.getsockname()}&#39;
                         )
 
                         # new thread
@@ -82,7 +82,7 @@ class Server(threading.Thread):
 
                         # add thread to active connections
                         self.connections.append(server_socket)
-                        print(f&#39;ready to receive messages from {sc.getpeername()}&#39;)
+                        print(f&#39;Pronto para receber mensagens de {sc.getpeername()}&#39;)
 
         def broadcast(self, message, source):
                 &#34;&#34;&#34;
@@ -186,14 +186,14 @@ else to the thread.</p></div>
                 sock.bind((self.host, self.port))
 
                 sock.listen(1)
-                print(f&#39;listening at {sock.getsockname()}&#39;)
+                print(f&#39;Ouvindo em {sock.getsockname()}&#39;)
 
                 # listen for new client connections
                 while True:
                         # new connection
                         sc, sockname = sock.accept()
                         print(
-                            f&#39;new connection from {sc.getpeername()} to {sc.getsockname()}&#39;
+                            f&#39;Nova conexao de {sc.getpeername()} para {sc.getsockname()}&#39;
                         )
 
                         # new thread
@@ -203,7 +203,7 @@ else to the thread.</p></div>
 
                         # add thread to active connections
                         self.connections.append(server_socket)
-                        print(f&#39;ready to receive messages from {sc.getpeername()}&#39;)
+                        print(f&#39;Pronto para receber mensagens de {sc.getpeername()}&#39;)
 
         def broadcast(self, message, source):
                 &#34;&#34;&#34;
@@ -316,14 +316,14 @@ aquele cliente específico. Todos os objetos ServerSocket são armazenados no at
         sock.bind((self.host, self.port))
 
         sock.listen(1)
-        print(f&#39;listening at {sock.getsockname()}&#39;)
+        print(f&#39;Ouvindo em {sock.getsockname()}&#39;)
 
         # listen for new client connections
         while True:
                 # new connection
                 sc, sockname = sock.accept()
                 print(
-                    f&#39;new connection from {sc.getpeername()} to {sc.getsockname()}&#39;
+                    f&#39;Nova conexao de {sc.getpeername()} para {sc.getsockname()}&#39;
                 )
 
                 # new thread
@@ -333,7 +333,7 @@ aquele cliente específico. Todos os objetos ServerSocket são armazenados no at
 
                 # add thread to active connections
                 self.connections.append(server_socket)
-                print(f&#39;ready to receive messages from {sc.getpeername()}&#39;)</code></pre>
+                print(f&#39;Pronto para receber mensagens de {sc.getpeername()}&#39;)</code></pre>
 </details>
 </dd>
 </dl>

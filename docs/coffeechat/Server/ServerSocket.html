@@ -56,10 +56,10 @@ class ServerSocket(threading.Thread):
                 while True:
                         message = self.sc.recv(1024).decode(&#39;ascii&#39;)
                         if message:
-                                print(f&#39;{self.sockname} says {message}&#39;)
+                                print(f&#39;{self.sockname} diz {message}&#39;)
                                 self.server.broadcast(message, self.sockname)
                         else:
-                                print(f&#39;{self.sockname} has closed connection&#39;)
+                                print(f&#39;{self.sockname} fechou a conexao.&#39;)
                                 self.sc.close()
                                 self.server.remove_connection(self)
                                 return
@@ -139,10 +139,10 @@ else to the thread.</p></div>
                 while True:
                         message = self.sc.recv(1024).decode(&#39;ascii&#39;)
                         if message:
-                                print(f&#39;{self.sockname} says {message}&#39;)
+                                print(f&#39;{self.sockname} diz {message}&#39;)
                                 self.server.broadcast(message, self.sockname)
                         else:
-                                print(f&#39;{self.sockname} has closed connection&#39;)
+                                print(f&#39;{self.sockname} fechou a conexao.&#39;)
                                 self.sc.close()
                                 self.server.remove_connection(self)
                                 return
@@ -182,10 +182,10 @@ de threads ServerSocket no thread de servidor pai.</p></div>
         while True:
                 message = self.sc.recv(1024).decode(&#39;ascii&#39;)
                 if message:
-                        print(f&#39;{self.sockname} says {message}&#39;)
+                        print(f&#39;{self.sockname} diz {message}&#39;)
                         self.server.broadcast(message, self.sockname)
                 else:
-                        print(f&#39;{self.sockname} has closed connection&#39;)
+                        print(f&#39;{self.sockname} fechou a conexao.&#39;)
                         self.sc.close()
                         self.server.remove_connection(self)
                         return</code></pre>

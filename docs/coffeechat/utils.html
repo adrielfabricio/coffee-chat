@@ -40,10 +40,10 @@ def exit(server):
         while True:
                 ipt = input(&#39;&#39;)
                 if (ipt == &#39;q&#39;):
-                        print(&#39;closing all connections...&#39;)
+                        print(&#39;Fechando todas as conexoes...&#39;)
                         for connection in server.connections:
                                 connection.sc.close()
-                        print(&#39;shutting down the server&#39;)
+                        print(&#39;Desligando o servidor ...&#39;)
                         os._exit(0)</code></pre>
 </details>
 </section>
@@ -80,10 +80,10 @@ Digitar 'q' na linha de comando fechará todas as conexões ativas e sairá do a
         while True:
                 ipt = input(&#39;&#39;)
                 if (ipt == &#39;q&#39;):
-                        print(&#39;closing all connections...&#39;)
+                        print(&#39;Fechando todas as conexoes...&#39;)
                         for connection in server.connections:
                                 connection.sc.close()
-                        print(&#39;shutting down the server&#39;)
+                        print(&#39;Desligando o servidor ...&#39;)
                         os._exit(0)</code></pre>
 </details>
 </dd>
