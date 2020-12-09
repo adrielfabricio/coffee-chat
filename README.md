@@ -41,6 +41,9 @@
             <li><a href="#clientes">Clientes</a></li>
         </ul>
     </li>
+    <li>
+        <a href="#contribuidores">Contribuidores</a>
+    </li>
   </ol>
 </details>
 
@@ -131,6 +134,13 @@ Quando um novo usuário entra na rede os usuários já existentes são notificad
 É possivel conectar diversos usuários ao chat, no windows 10 sempre que tiver uma nova mensagem aparecerá ela na notificação do SO
 
 ![client-1](./img/client8.png)
+
+## Contribuidores
+
+- [Adriel Fabricio](https://github.com/adrielfabricio)
+- [Diêgo Marcelino](https://github.com/marcelinodiego)
+- [Henrique Serra](https://github.com/SerraZ3)
+- [Samuel Mendonça](https://github.com/Syphoon)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
