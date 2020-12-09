@@ -42,9 +42,8 @@
             <li><a href="#clientes">Clientes</a></li>
         </ul>
     </li>
-    <li>
-        <a href="#contribuidores">Contribuidores</a>
-    </li>
+    <li><a href="#protocolo">Protocolo</a></li>
+    <li><a href="#contribuidores">Contribuidores</a></li>
   </ol>
 </details>
 
@@ -139,6 +138,19 @@ Quando um novo usuário entra na rede os usuários já existentes são notificad
 É possivel conectar diversos usuários ao chat, no windows 10 sempre que tiver uma nova mensagem aparecerá ela na notificação do SO
 
 ![client-1](./img/client8.png)
+
+## Protocolo
+
+Para a aplicação enviar e receber mensagens criamos uma estrutura client-server, onde o servidor é responsável por receber mensagens e difundir elas para os clientes conectados. Para comunicação entre o servidor e o cliente usamos o modelo TCP/IP.
+
+![client-1](./img/protocolo2.png)
+
+O servidor quando roda ele armazena todos os clientes conectados guardando seus IP's e suas portas. A distribuição de mensagem funciona da seguinte forma
+
+- Um cliente manda uma mensagem para o servidor
+- O servidor recebe e processa a mensagem
+- O servidor envia as mensagens para todos os clientes conectados
+- Os clientes conectados mostram a mensagem da tela
 
 ## Contribuidores
 
