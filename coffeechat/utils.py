@@ -5,6 +5,9 @@ def exit(server):
 	"""
 	Permite que o administrador do servidor desligue o servidor.
 	Digitar 'q' na linha de comando fechará todas as conexões ativas e sairá do aplicativo.
+
+	Attributes:
+		server (Server): Servidor que será desligado.
 	"""
 	while True:
 		ipt = input('')

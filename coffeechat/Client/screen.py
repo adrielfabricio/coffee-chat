@@ -1,8 +1,14 @@
+"""Configuração da tela da sala de bate-papo"""
 from tkinter import *
 
 
 def window(root):
-
+	"""
+	Define padrão da janela do chat
+	
+	Attributes:
+		root (tk.Tk()): Objeto tkinter.
+	"""
 	root.title("CoffeeChat")
 	width = 500
 	heigth = 340
@@ -12,18 +18,24 @@ def window(root):
 
 
 def set_user(username):
+	"""
+	Define nome do usuário.
 
+	Attributes:
+		username (str): Nome do usuário.
+	"""
 	user = username
 	Label(frame_side, text=username, wraplength=20, anchor="w",
 	      justify=LEFT).pack()
 
 
 def set_message(event):
-
+	"""
+	
+	"""
 	message = entry.get()
 
 	if message.isspace():
-
 		Label(scrollable_frame,
 		      text=user,
 		      wraplength=370,
@@ -51,13 +63,12 @@ def set_message(event):
 
 
 def clear_message(event):
-
-	# print("You clicked the fucking entry")
+	"""Apaga mensagem do input ao clicar nele."""
 	entry.delete(0, END)
 
 
 def start_screen():
-
+	"""Configuração e inicialização da tela de bate-papo."""
 	global scrollable_frame
 	global entry
 	global user

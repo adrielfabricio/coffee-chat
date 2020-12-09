@@ -1,13 +1,14 @@
+"""Configuração da classe resposável por receber mensagens do servidor"""
 import os
 import socket
 import threading
 import tkinter as tk
+from datetime import datetime
 try:
 	from winsound import *
 	from win10toast import ToastNotifier
 except ImportError:
 	pass
-from datetime import datetime
 
 
 class Receive(threading.Thread):
@@ -43,8 +44,7 @@ class Receive(threading.Thread):
 					self.messages.insert(
 					    tk.END, '(' + str(timestamp) + ')' + ' ' + message)
 
-					#SOM DE NOTIFICAÇÃO
-					#NOTIFICAÇÃO WINDOWS
+					# Notificação windows
 					if os.name == 'nt':
 						PlaySound('notification.wav', SND_FILENAME)
 						toaster = ToastNotifier()

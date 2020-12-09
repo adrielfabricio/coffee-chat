@@ -1,7 +1,9 @@
+"""Configuração da classe resposável por enviar mensagens para o servidor"""
 import os
 import sys
 import socket
 import threading
+
 
 class Send(threading.Thread):
 	'''
@@ -25,7 +27,6 @@ class Send(threading.Thread):
 			message = input(f'{self.name}: ')
 			sys.stdout.flush()
 			message = sys.stdin.readline()[:-1]
-
 
 			# leave of app typing 'QUIT'
 			if message == 'QUIT':

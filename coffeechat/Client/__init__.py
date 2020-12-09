@@ -1,12 +1,20 @@
+"""Configuração do cliente"""
 import socket
 import tkinter as tk
+from datetime import datetime
 from coffeechat.Client.send import *
 from coffeechat.Client.receive import *
-from datetime import datetime
 
 
 def get_name(entry, window, obj):
-
+	"""
+	Captura o nome do usuário pela interface gráfica.
+	
+	Attributes:
+		entry (tk.Entry): Campo de entrada para o nome do usuário.
+		window (tk.Frame): Janela da interface gráfica onde é localizado o campo de entrada.
+		obj (Client): Objeto do tipo Client.
+	"""
 	obj.name = entry.get()
 	window.destroy()
 

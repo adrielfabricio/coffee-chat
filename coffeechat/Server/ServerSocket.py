@@ -1,3 +1,4 @@
+"""Configuração do socket do servidor"""
 import os
 import threading
 

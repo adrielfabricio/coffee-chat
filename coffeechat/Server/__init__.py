@@ -1,3 +1,4 @@
+"""Configuração do servidor"""
 import os
 import socket
 import threading
@@ -5,14 +6,14 @@ from coffeechat.Server.ServerSocket import *
 
 
 class Server(threading.Thread):
-	'''
+	"""
 	Suporta gerenciamento de conexões de servidor.
 
 	Attributes:
 		connections (list): Lista de objetos ServerSocket que representam as conexões ativas.
 		host (str): Endereço IP do socket de escuta.
 		port (int): Número da porta do socket de escuta.
-	'''
+	"""
 	def __init__(self, host, port):
 		super().__init__()
 		# list of server sockets objects representing active client connections

@@ -1,4 +1,4 @@
-"""Configuração do servidor e sua interface GUI"""
+"""Inicialização do servidor e sua interface GUI"""
 import os
 import argparse
 import threading
