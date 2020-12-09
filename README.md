@@ -90,7 +90,7 @@ Para rodar o projeto é preciso iniciar um servidor em um endereço IP na rede q
 
 ### Servidor
 
-Para iniciar o servidor rode o seguinte comando
+Para iniciar o servidor rode o seguinte comando:
 
 ```shell
 $ python3 server.py
@@ -121,7 +121,7 @@ Em seguida, irá abrir uma nova caixa pedindo para o nome de identificação do 
 ![client-1](./img/client3.png)
 ![client-1](./img/client4.png)
 
-Após preencher o nome do usuário irá abrir uma janela para o chat
+Após preencher o nome do usuário irá abrir uma janela para o chat:
 
 ![client-1](./img/client5.png)
 
